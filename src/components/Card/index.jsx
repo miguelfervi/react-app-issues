@@ -26,6 +26,7 @@ export const CardPane = ({ issue }) => {
   return (
     <div>
       <Card
+        className="animate__animated animate__fadeIn"
         hoverable
         style={{ margin: "1rem" }}
         cover={<img alt="issue" src={issue.cover_image} />}
@@ -35,7 +36,9 @@ export const CardPane = ({ issue }) => {
           title={issue.name}
           description={showMessage()}
         />
-        <Button type="primary" onClick={onClick}>Read more</Button>
+        <Button type="primary" onClick={onClick}>
+          Read more
+        </Button>
       </Card>
     </div>
   );

@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CardDetail } from "./components/CardDetail";
 import 'antd/dist/antd.css';
 import './index.css';
+import 'animate.css';
 
 const Routing = () => {
   return (
