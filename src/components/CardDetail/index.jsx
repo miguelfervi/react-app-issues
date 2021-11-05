@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router";
-import { Button } from 'antd';
-
+import { Button, Descriptions } from "antd";
 
 export const CardDetail = () => {
   const [issue, setIssue] = useState();
@@ -24,11 +23,17 @@ export const CardDetail = () => {
 
   return issue ? (
     <div>
-      <div>{issue.name}</div>
-      <div>{issue.cover_image}</div>
-      <div>{issue.id}</div>
-      <div>{issue.description}</div>
-      <Button type="primary" onClick={() => navigate('/')}>Go back</Button>
+      <div>
+        <img alt="issue" width="300" height="400" src={issue.cover_image} />
+      </div>
+      <div>
+        {issue.name}
+        {issue.id}
+        {issue.description}
+      </div>
+      <Button type="primary" onClick={() => navigate("/")}>
+        Go back
+      </Button>
     </div>
   ) : (
     <div> Loading</div>

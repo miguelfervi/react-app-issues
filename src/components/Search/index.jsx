@@ -6,7 +6,7 @@ export const SearchBox = ({ placeholder, handleChange }) => (
   <div className="search-box">
     <Space direction="vertical">
       <Input
-        placeholder="input search text"
+        placeholder="Search your favourite issue"
         onChange={handleChange}
         style={{ width: 500 }}
         allowClear 
