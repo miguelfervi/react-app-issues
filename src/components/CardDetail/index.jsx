@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router";
-import { Button } from "antd";
+import { Button, Spin } from "antd";
 import "./index.css";
 import { AlertMessage } from "../AlertMessage";
 
@@ -54,7 +54,9 @@ export const CardDetail = () => {
       </div>
     </div>
   ) : !error ? (
-    <div> Loading</div>
+    <div className="spinner">
+    <Spin />
+  </div>
   ) : (
       <AlertMessage message="Error Text" description="Issue not found" type="error" />
   );
