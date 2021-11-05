@@ -1,0 +1,8 @@
+nav {
+    font-size:3rem;
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    background-color:darkslategray;
+    color: white;
+}

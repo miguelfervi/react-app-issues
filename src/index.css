@@ -1,6 +1,7 @@
 body {
   overflow-x: hidden;
   height: auto;
+  background-color: lightgray 
 }
 
 .ant-card-cover img {

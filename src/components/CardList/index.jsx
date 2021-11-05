@@ -9,7 +9,7 @@ export const CardList = ({ issues }) => {
       {issues &&
         issues.map((issue) => (
           <Col key={issue.id} className="column" span={6}>
-            <CardPane issue={issue} />
+            <CardPane className="test" issue={issue} />
           </Col>
         ))}
     </Row>
