@@ -55,9 +55,13 @@ export const CardDetail = () => {
     </div>
   ) : !error ? (
     <div className="spinner">
-    <Spin />
-  </div>
+      <Spin />
+    </div>
   ) : (
-      <AlertMessage message="Error Text" description="Issue not found" type="error" />
+    <AlertMessage
+      message="Error Text"
+      description="Issue not found"
+      type="error"
+    />
   );
 };

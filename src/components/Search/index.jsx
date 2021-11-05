@@ -9,7 +9,7 @@ export const SearchBox = ({ handleChange }) => (
         placeholder="Search your favourite issue"
         onChange={handleChange}
         style={{ width: 500 }}
-        allowClear 
+        allowClear
       />
     </Space>
   </div>

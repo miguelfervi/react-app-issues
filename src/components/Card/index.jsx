@@ -27,10 +27,7 @@ export const CardPane = ({ issue }) => {
         style={{ margin: "1rem" }}
         cover={<img alt="issue" src={issue.cover_image} />}
       >
-        <Meta
-          title={issue.name}
-          description={showMessage()}
-        />
+        <Meta title={issue.name} description={showMessage()} />
       </Card>
     </div>
   );
