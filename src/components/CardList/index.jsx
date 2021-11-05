@@ -1,11 +1,16 @@
 import React from "react";
-import { Card } from "../Card";
+import { CardPane } from "../Card";
+import { Col, Row } from "antd";
 
 export const CardList = ({ issues }) => {
-  return (
-    <div className="card-list">
-      {" "}
-      {issues && issues.map((issue) => <Card key={issue.id} issue={issue} />)}
-    </div>
-  );
+  return issues ? (
+    <Row gutter={16}>
+      {issues &&
+        issues.map((issue) => (
+          <Col key={issue.id} span={6}>
+            <CardPane issue={issue} />
+          </Col>
+        ))}
+    </Row>
+  ) : <div>Loading</div> ;
 };

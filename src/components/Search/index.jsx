@@ -1,10 +1,16 @@
 import React from "react";
+import { Input, Space } from "antd";
+import "./index.css";
 
 export const SearchBox = ({ placeholder, handleChange }) => (
-  <input
-    className="search"
-    type="search"
-    placeholder={placeholder}
-    onChange={handleChange}
-  ></input>
+  <div className="search-box">
+    <Space direction="vertical">
+      <Input
+        placeholder="input search text"
+        onChange={handleChange}
+        style={{ width: 500 }}
+        allowClear 
+      />
+    </Space>
+  </div>
 );

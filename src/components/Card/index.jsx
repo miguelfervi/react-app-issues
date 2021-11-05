@@ -1,7 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router";
+import { Card } from "antd";
+import "./index.css";
+const { Meta } = Card;
 
-export const Card = ({ issue }) => {
+export const CardPane = ({ issue }) => {
   const navigate = useNavigate();
 
   const onClick = () => {
@@ -9,10 +12,19 @@ export const Card = ({ issue }) => {
   };
 
   return (
-    <div className="card-container" onClick={onClick}>
-      <img alt="issue" src={issue.cover_image} />
-      <h1>{issue.name}</h1>
-      <p>{issue.description}</p>
+    <div>
+      <Card
+        onClick={onClick}
+        hoverable
+        style={{ margin: "1rem" }}
+        cover={<img alt="issue" src={issue.cover_image} />}
+      >
+        <Meta
+          className="card-size"
+          title={issue.name}
+          description={issue.description}
+        />
+      </Card>
     </div>
   );
 };

@@ -29,7 +29,7 @@ const App = () => {
         handleChange={handleChange}
         placeholder="search issues"
       ></SearchBox>
-      <CardList issues={filteredIssues}></CardList>
+      {filteredIssues.length > 0 ? <CardList issues={filteredIssues}></CardList> : <div>No issues found</div>}
     </div>
   );
 };
