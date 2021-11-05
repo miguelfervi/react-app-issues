@@ -1,0 +1,19 @@
+.image-container {
+    float: left;
+}
+
+.info-container {
+    float: right;
+    margin: 50px;
+    margin-top: unset;
+}
+
+.button-container {
+    display: block;
+}
+
+.layout {
+    margin-top: 100px;
+    margin-left: 50px;
+    display: flex;
+}

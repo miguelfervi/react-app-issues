@@ -3,9 +3,11 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CardDetail } from "./components/CardDetail";
-import 'antd/dist/antd.css';
-import './index.css';
-import 'animate.css';
+import { AlertMessage } from "./components/AlertMessage";
+
+import "antd/dist/antd.css";
+import "./index.css";
+import "animate.css";
 
 const Routing = () => {
   return (
@@ -13,6 +15,10 @@ const Routing = () => {
       <Routes>
         <Route exact path="/" element={<App />} />
         <Route exact path="/issues/:id" element={<CardDetail />} />
+        <Route
+          path="*"
+          element={<AlertMessage description="Page not found" message="The page that you trying to go is not found" type="error" />}
+        />
       </Routes>
     </BrowserRouter>
   );

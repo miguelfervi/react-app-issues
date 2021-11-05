@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { SearchBox } from "./components/Search";
 import { CardList } from "./components/CardList";
 import axios from "axios";
+import { AlertMessage } from "./components/AlertMessage";
 
 const App = () => {
   const [issues, setIssues] = useState([]);
@@ -29,7 +30,17 @@ const App = () => {
         handleChange={handleChange}
         placeholder="search issues"
       ></SearchBox>
-      {filteredIssues.length > 0 ? <CardList issues={filteredIssues}></CardList> : <div>No issues found</div>}
+      {filteredIssues.length > 0 ? (
+        <CardList issues={filteredIssues}></CardList>
+      ) : (
+        <AlertMessage
+          className="alert"
+          message="Error Text"
+          description="Not found issues with this criteria"
+          type="error"
+          button={false}
+        />
+      )}
     </div>
   );
 };

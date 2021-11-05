@@ -1,6 +1,7 @@
 import React from "react";
 import { CardPane } from "../Card";
 import { Col, Row } from "antd";
+import { AlertMessage } from "../AlertMessage";
 
 export const CardList = ({ issues }) => {
   return issues ? (
@@ -8,9 +9,15 @@ export const CardList = ({ issues }) => {
       {issues &&
         issues.map((issue) => (
           <Col key={issue.id} className="column" span={6}>
-           <CardPane issue={issue} />
+            <CardPane issue={issue} />
           </Col>
         ))}
     </Row>
-  ) : <div>Loading</div> ;
+  ) : (
+    <AlertMessage
+      message="Info Text"
+      description="Loading issues..."
+      type="info"
+    ></AlertMessage>
+  );
 };

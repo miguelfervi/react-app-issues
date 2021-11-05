@@ -2,7 +2,7 @@ import React from "react";
 import { Input, Space } from "antd";
 import "./index.css";
 
-export const SearchBox = ({ placeholder, handleChange }) => (
+export const SearchBox = ({ handleChange }) => (
   <div className="search-box">
     <Space direction="vertical">
       <Input
