@@ -3,7 +3,15 @@ body {
   height: auto;
 }
 
-img {
-  height: 600px;
-  min-height: 570px;
+.ant-card-cover img {
+  max-height: 400px;
+}
+
+.ant-card-bordered {
+  max-width: 300px;
+}
+
+.column {
+  display: flex;
+  justify-content: center;
 }

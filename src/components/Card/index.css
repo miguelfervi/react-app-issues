@@ -1,7 +1,7 @@
+.ant-card-body {
+  min-height: 200px;
+}
 
-
-.ant-card-meta-detail {
-    min-height: 250px;
-    height: 250px;
-
+.ant-btn{
+    margin-top: 20px;
 }

@@ -1,11 +1,23 @@
 import React from "react";
 import { useNavigate } from "react-router";
-import { Card } from "antd";
+import { Button, Card } from "antd";
 import "./index.css";
 const { Meta } = Card;
 
+const LIMIT = 200;
+
 export const CardPane = ({ issue }) => {
   const navigate = useNavigate();
+
+  const showMessage = () => {
+    let toShow = issue.description;
+    if (issue.description.length <= LIMIT) {
+      toShow = issue.description;
+    } else if (issue.description.length > LIMIT) {
+      toShow = issue.description.substring(0, LIMIT) + "...";
+    }
+    return toShow;
+  };
 
   const onClick = () => {
     navigate(`/issues/${issue.id}`);
@@ -14,7 +26,6 @@ export const CardPane = ({ issue }) => {
   return (
     <div>
       <Card
-        onClick={onClick}
         hoverable
         style={{ margin: "1rem" }}
         cover={<img alt="issue" src={issue.cover_image} />}
@@ -22,8 +33,9 @@ export const CardPane = ({ issue }) => {
         <Meta
           className="card-size"
           title={issue.name}
-          description={issue.description}
+          description={showMessage()}
         />
+        <Button type="primary" onClick={onClick}>Read more</Button>
       </Card>
     </div>
   );
