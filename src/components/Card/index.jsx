@@ -28,7 +28,6 @@ export const CardPane = ({ issue }) => {
         cover={<img alt="issue" src={issue.cover_image} />}
       >
         <Meta
-          className="card-size"
           title={issue.name}
           description={showMessage()}
         />

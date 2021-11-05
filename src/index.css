@@ -1,11 +1,13 @@
 body {
   overflow-x: hidden;
   height: auto;
-  background-color: lightgray 
+  background-color: lightgray;
 }
 
 .ant-card-cover img {
+  min-height: 400px;
   max-height: 400px;
+
 }
 
 .ant-card-bordered {
@@ -13,12 +15,16 @@ body {
 }
 
 .column {
-  display: flex;
-  justify-content: center;
+  justify-content:center;
 }
 
 .alert {
   margin-top: 100px;
   margin-left: 100px;
   margin-right: 100px;
+}
+
+.ant-card-body {
+  min-height: 250px;
+  text-overflow: ellipsis;
 }
