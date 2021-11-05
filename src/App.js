@@ -1,25 +1,14 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios'
+import React from "react";
+import { SearchBox } from "./components/Search";
+import { CardList } from "./components/CardList";
 
-function App() {
-
-  const [data, setData] = useState();
-
-  useEffect(() => {
-    const fetchData = async () => {
-        const result = await axios(`${process.env.REACT_APP_API_ADDRESS}/issues`);
-        setData(result.data);
-        console.log(result.data);
-    };
-
-  fetchData();
-}, []);
-
+const App = () => {
   return (
-    <div className="App">
-      {data && data[0].name}
+    <div>
+      <SearchBox placeholder="search issues"></SearchBox>
+      <CardList></CardList>
     </div>
   );
-}
+};
 
 export default App;
