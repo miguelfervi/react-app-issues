@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 export const CardDetail = () => {
   const [issue, setIssue] = useState();
+  const navigate = useNavigate();
 
   const { id } = useParams();
 
@@ -19,5 +20,15 @@ export const CardDetail = () => {
     fetchData();
   }, [id]);
 
-  return <div>{issue && issue.name}</div>;
+  return issue ? (
+    <div>
+      <div>{issue.name}</div>
+      <div>{issue.cover_image}</div>
+      <div>{issue.id}</div>
+      <div>{issue.description}</div>
+      <button onClick={() => navigate('/')}>Go back</button>
+    </div>
+  ) : (
+    <div> Loading</div>
+  );
 };
