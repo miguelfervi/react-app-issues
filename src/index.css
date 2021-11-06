@@ -14,10 +14,6 @@ body {
   max-width: 300px;
 }
 
-.column {
-  justify-content:center;
-  display: flex;
-}
 
 .alert {
   margin-top: 100px;

@@ -5,11 +5,11 @@ import { AlertMessage } from "../AlertMessage";
 
 export const CardList = ({ issues }) => {
   return issues ? (
-    <Row gutter={16}>
+    <Row gutter={10}>
       {issues &&
         issues.map((issue) => (
-          <Col key={issue.id} className="column" span={6}>
-            <CardPane className="test" issue={issue} />
+          <Col key={issue.id} span={4}>
+            <CardPane issue={issue} />
           </Col>
         ))}
     </Row>
