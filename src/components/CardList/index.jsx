@@ -8,7 +8,7 @@ export const CardList = ({ issues }) => {
     <Row gutter={10}>
       {issues &&
         issues.map((issue) => (
-          <Col key={issue.id} span={4}>
+          <Col key={issue.id} md={{ span: 10 }} lg={{ span: 4 }} >
             <CardPane issue={issue} />
           </Col>
         ))}
