@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { SearchBox } from "./components/Search";
+import { SearchBox } from "./components/SearchBox";
 import { CardList } from "./components/CardList";
 import axios from "axios";
 import { AlertMessage } from "./components/AlertMessage";
 import { Spin } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const App = () => {
+  const navigate = useNavigate();
   const [issues, setIssues] = useState([]);
   const [searchField, setSearchField] = useState("");
   const [loading, setLoading] = useState(true);
@@ -22,6 +24,9 @@ const App = () => {
 
   const handleChange = (e) => {
     setSearchField(e.target.value);
+    e.target.value.trim() !== ""
+      ? navigate(`/?q=${e.target.value}`)
+      : navigate(`/`);
   };
 
   const filteredIssues = issues.filter((issue) =>
